@@ -10,7 +10,7 @@ var leadModule = (function () {
 		leadFormContainer : 'lead-form-container',
 		leadCookie : 'enquiry_info',
 		registerBox : 'registerBox',
-		isDummy : false
+		isDummy : true
 	}
 
     var setcookie = function(cname, cvalue) {

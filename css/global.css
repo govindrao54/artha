@@ -136,12 +136,24 @@ section p { font-size: 16px; }
 /* css for register lightbox */
 .registerBox { position: fixed; top: 0; left: 0; opacity: 0; visibility: hidden; width: 100%; height: 100%; z-index: 10; transition: all .3s ease-in-out; background-color: rgba(0,0,0,.5); }
 .registerBox.open { opacity: 1; visibility: visible; }
-.registerBox .content { padding: 20px; margin: auto; margin-top: 15%; max-width: 300px; width: 100%; border-radius: 7px; position: relative; background-color: #fff; }
+.registerBox .content { padding: 20px; margin: auto; margin-top: 15%; max-width: 500px; width: 100%; border-radius: 7px; position: relative; background-color: #fff; }
 .registerBox .form-control { padding: 0; padding-bottom: 5px; height: auto; border-width: 0; border-radius: 0; border-bottom-width: 1px; box-shadow: none!important; font-family: 'Slabo 27px', arial, serif; }
 .registerBox .form-control:focus { box-shadow: none; }
 .registerBox .modal-dialog { margin-top: 15%; }
 .registerBox select { padding: 0; color: #999; }
 .registerBox .clse { border: 0 none; border-radius: 50%; font-size: 12px; font-weight: 800; height: 30px; position: absolute; right: -15px; text-transform: uppercase; top: -15px; width: 30px; border: 1px solid #ccc; background: #fff; }
+.registerBox .form-group { margin: 0; position: relative; min-height: 50px; }
+.registerBox .errorMsg { position: absolute; bottom: 7px; left: 0; }
+.registerBox .mobile .form-control { padding-left: 25px; }
+.registerBox .mobile span { position: absolute; top: 3px; left: 0; font-family: 'Slabo 27px', arial, serif; }
+.registerBox .thankYou i { color: green; font-size: 40px; }
+.registerBox .thankYou h3 { margin-top: 15px; position: relative; }
+.registerBox .promise { margin-top: 20px; }
+.registerBox .promise h4 { position: relative; }
+.registerBox .promise h4:after { bottom: -5px; content: ""; height: 2px; left: 47%; margin: 0 auto; position: absolute; width: 30px; background-color: #f5a623; }
+.registerBox .promise ul { margin: 0; margin-top: 20px; overflow: hidden; }
+.registerBox .promise li { float: left; width: 25%; color: #999; font-family: 'Slabo 27px', arial, serif; font-size: 13px; }
+.registerBox .promise li img { margin: auto; margin-bottom: 10px; display: block; }
 
 /* css for image lightbox */
 .imgLightBox { position: fixed; top: 0; left: 0; opacity: 0; visibility: hidden; width: 100%; height: 100%; z-index: 10; transition: all .3s ease-in-out; background-color: rgba(0,0,0,.5); }
@@ -189,7 +201,8 @@ footer span { padding-right: 10px; }
 	.bookNowBox .feature span { font-size: 14px; }
 	.globalLaunchBox { padding-bottom: 0; }
 	.apartmentTypeBox .spec-row { padding: 0; }
-	.apartmentTypeBox .loanBlock, .apartmentTypeBox .specsWrapper { margin: 0 -20px; margin-bottom: 20px; }
+	.apartmentTypeBox .loanBlock, .apartmentTypeBox .specsWrapper { margin: 0 -20px; }
+	.apartmentTypeBox .specsWrapper { margin-bottom: 20px; }
 	.amenitiesBox li { margin: 10px 0; width: 44%; }
 	.neighbourhoodBox { display: none; }
 	.aboutBuilerBox { padding-top: 0; }
@@ -202,14 +215,18 @@ footer span { padding-right: 10px; }
 @media (max-width: 480px) {
 	section h2 { font-size: 20px; }
 	section p { line-height: 24px; }
+	.bannerBox .info h1 { font-size: 26px; }
+	.bannerBox .info h1 i { font-size: 24px; }
 	.bookNowBox .feature { font-size: 18px; }
 	.bookNowBox .feature span { font-size: 12px; }
 	.bookNowBox .feature .fa-rupee { font-size: 16px; }
 	.conceptManageWrapBox .cols { padding: 20px; display: block; }
 	.amenitiesBox li { margin: 10px; padding: 0; width: 22%; word-wrap: break-word; } 
-	.loanBlock .col span { font-size: 28px; }
+	.loanBlock .col span { font-size: 22px; }
 	.loanBlock .col { font-size: 12px; }
 	.globalLaunchBox .loanBlock .col:after { display: none; }
 	.globalLaunchBox .loanBlock .col { padding-bottom: 20px; margin-top: 20px; border-bottom: 1px solid #dcdcdc; width: 100%; }
 	.imgLightBox .content { max-width: 300px; }
+	.amenitiesBox li img { width: 40px; }
+	.registerBox .content { max-width: 290px; }
 }

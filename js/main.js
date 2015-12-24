@@ -3,26 +3,12 @@ var pageModule = (function () {
 		navsLinksClass : '.navbar-nav a',
 		navContainerClass : '.navbar-collapse',
 		headerClass : 'js-header',
-		stickyHeader : 'fixed'
+		stickyHeader : 'fixed',
+		section1 : 'bookNow',
+		section2 : 'section2',
+		section3 : 'section3',
+		section4 : 'section4'
 	}
-
-	// var scrollTo = function(element, to, duration) {
-	//     var start = element.scrollTop,
-	//         change = to - start,
-	//         increment = 20;
-
-	//     var animateScroll = function(elapsedTime) {        
-	//         elapsedTime += increment;
-	//         var position = easeInOut(elapsedTime, start, change, duration);                        
-	//         element.scrollTop = position; 
-	//         if (elapsedTime < duration) {
-	//             setTimeout(function() {
-	//                 animateScroll(elapsedTime);
-	//             }, increment);
-	//         }
-	//     };
-	//     animateScroll(0);
-	// }
 
 	var easeInOut = function(currentTime, start, change, duration) {
 	    currentTime /= duration / 2;
@@ -33,10 +19,34 @@ var pageModule = (function () {
 	    return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
 	}
 
+	var scrollTo = function(element, to, duration) {
+		console.log('khjsdfhkjsdjf');
+	    var start = element.scrollTop,
+	        change = to - start,
+	        increment = 20;
+
+	    var animateScroll = function(elapsedTime) {
+	        elapsedTime += increment;
+	        var position = easeInOut(elapsedTime, start, change, duration);
+	        element.scrollTop = position;
+	        if (elapsedTime < duration) {
+	            setTimeout(function() {
+	                animateScroll(elapsedTime);
+	            }, increment);
+	        }
+	    };
+	    animateScroll(0);
+	}
+
 	var scroller = function(targetId) {
-		var ypos = document.getElementById(targetId).offsetTop;
-		//scrollTo(document.body, ypos, 1000);
-		scrollTo(0, ypos);
+		var el,
+			ypos,
+			isWebkit;
+
+		ypos = document.getElementById(targetId).offsetTop;
+		isWebkit = 'WebkitAppearance' in document.documentElement.style;
+		el = isWebkit ? document.body : document.getElementsByTagName('html')[0];
+		scrollTo(el, ypos, 1000);
 	}
 
 	var fixHeader = function(){
@@ -60,11 +70,32 @@ var pageModule = (function () {
 		elemHead.classList.remove(config.stickyHeader);
 	}
 
+	var _removeActiveClass = function(elemList){
+		for(i=0;i < 4; i++){
+			elemList[i].classList.remove('active');
+		}
+	}
+
 	var scrollDetector = function(e) {
 		if(window.scrollY > 100){
 			_addStickyHeader();
 		} else {
 			_removeStickyHeader();
+		}
+		var lis = document.querySelectorAll('.navbar-nav li');
+		_removeActiveClass(lis);
+		if(window.scrollY >= document.getElementById(config.section1).offsetTop && window.scrollY < document.getElementById(config.section2).offsetTop){
+			_removeActiveClass(lis);
+			lis[0].classList.add('active');
+		} else if (window.scrollY >= document.getElementById(config.section2).offsetTop && window.scrollY < document.getElementById(config.section3).offsetTop){
+			_removeActiveClass(lis);
+			lis[1].classList.add('active');
+		} else if (window.scrollY >= document.getElementById(config.section3).offsetTop && window.scrollY < document.getElementById(config.section4).offsetTop){
+			_removeActiveClass(lis);
+			lis[2].classList.add('active');
+		} else if (window.scrollY >= document.getElementById(config.section4).offsetTop && window.scrollY < document.getElementsByTagName('footer')[0].offsetTop){
+			_removeActiveClass(lis);
+			lis[3].classList.add('active');
 		}
 	}
 
@@ -79,7 +110,6 @@ var pageModule = (function () {
 			}
 		}
 		window.onscroll = scrollDetector;
-
 	}
 
 	var init = function(){

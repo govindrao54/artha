@@ -1,13 +1,14 @@
 var pageModule = (function () {
 	config = {
-		navsLinksClass : '.navbar-nav a',
-		navContainerClass : '.navbar-collapse',
+		navsLinksClass : 'navbar-nav a',
+		navContainerClass : 'navbar-collapse',
 		headerClass : 'js-header',
 		stickyHeader : 'fixed',
 		section1 : 'bookNow',
 		section2 : 'section2',
 		section3 : 'section3',
-		section4 : 'section4'
+		section4 : 'section4',
+		downArrowClass : 'js-fa-chevron-down'
 	}
 
 	var easeInOut = function(currentTime, start, change, duration) {
@@ -41,7 +42,6 @@ var pageModule = (function () {
 		var el,
 			ypos,
 			isWebkit;
-
 		ypos = document.getElementById(targetId).offsetTop;
 
 		isWebkit = 'WebkitAppearance' in document.documentElement.style;
@@ -56,7 +56,7 @@ var pageModule = (function () {
 
 	var _addNavBarToggle = function(){
 		document.querySelector('.navbar-toggle').classList.toggle('collapsed');
-		document.querySelector(config.navContainerClass).classList.toggle('in');
+		document.querySelector('.' + config.navContainerClass).classList.toggle('in');
 	}
 
 	var _addStickyHeader = function(){
@@ -99,9 +99,13 @@ var pageModule = (function () {
 		}
 	}
 
+	var _jumpingArrow = function(){
+		scroller(config.section1);
+	}
+
 	var _bindUIActions = function () {
 		document.querySelector('.navbar-toggle').addEventListener("click",_addNavBarToggle);
-		var navs = document.querySelectorAll(config.navsLinksClass);
+		var navs = document.querySelectorAll('.' + config.navsLinksClass);
 		for(var i = 0; i < navs.length; i++) {
 			navs[i].onclick = function(e) {
 				e.preventDefault();
@@ -109,6 +113,7 @@ var pageModule = (function () {
 				scroller(targetId);
 			}
 		}
+		document.querySelector('.' + config.downArrowClass).addEventListener("click", _jumpingArrow);
 		window.onscroll = scrollDetector;
 	}
 

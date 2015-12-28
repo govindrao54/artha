@@ -20,9 +20,8 @@ var pageModule = (function () {
 	}
 
 	var scrollTo = function(element, to, duration) {
-		console.log('khjsdfhkjsdjf');
 	    var start = element.scrollTop,
-	        change = to - start,
+	        change = to - start - document.querySelector('.navbar-header').clientHeight,
 	        increment = 20;
 
 	    var animateScroll = function(elapsedTime) {
@@ -44,6 +43,7 @@ var pageModule = (function () {
 			isWebkit;
 
 		ypos = document.getElementById(targetId).offsetTop;
+
 		isWebkit = 'WebkitAppearance' in document.documentElement.style;
 		el = isWebkit ? document.body : document.getElementsByTagName('html')[0];
 		scrollTo(el, ypos, 1000);
@@ -55,7 +55,6 @@ var pageModule = (function () {
 	}
 
 	var _addNavBarToggle = function(){
-		console.log(document.querySelector('.navbar-toggle').classList);
 		document.querySelector('.navbar-toggle').classList.toggle('collapsed');
 		document.querySelector(config.navContainerClass).classList.toggle('in');
 	}
@@ -77,23 +76,24 @@ var pageModule = (function () {
 	}
 
 	var scrollDetector = function(e) {
-		if(window.scrollY > 100){
+		var yy = window.scrollY + document.querySelector('.navbar-header').clientHeight;
+		if(yy > 100){
 			_addStickyHeader();
 		} else {
 			_removeStickyHeader();
 		}
 		var lis = document.querySelectorAll('.navbar-nav li');
 		_removeActiveClass(lis);
-		if(window.scrollY >= document.getElementById(config.section1).offsetTop && window.scrollY < document.getElementById(config.section2).offsetTop){
+		if(yy >= document.getElementById(config.section1).offsetTop && yy < document.getElementById(config.section2).offsetTop){
 			_removeActiveClass(lis);
 			lis[0].classList.add('active');
-		} else if (window.scrollY >= document.getElementById(config.section2).offsetTop && window.scrollY < document.getElementById(config.section3).offsetTop){
+		} else if (yy >= document.getElementById(config.section2).offsetTop && yy < document.getElementById(config.section3).offsetTop){
 			_removeActiveClass(lis);
 			lis[1].classList.add('active');
-		} else if (window.scrollY >= document.getElementById(config.section3).offsetTop && window.scrollY < document.getElementById(config.section4).offsetTop){
+		} else if (yy >= document.getElementById(config.section3).offsetTop && yy < document.getElementById(config.section4).offsetTop){
 			_removeActiveClass(lis);
 			lis[2].classList.add('active');
-		} else if (window.scrollY >= document.getElementById(config.section4).offsetTop && window.scrollY < document.getElementsByTagName('footer')[0].offsetTop){
+		} else if (yy >= document.getElementById(config.section4).offsetTop && yy < document.getElementsByTagName('footer')[0].offsetTop){
 			_removeActiveClass(lis);
 			lis[3].classList.add('active');
 		}

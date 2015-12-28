@@ -25,7 +25,7 @@ header .navbar-toggle { margin-top: 16px; }
 
 /* css for banner */
 .bannerBox { height: 100%; position: relative; background: url(../images/bannerBg.jpg) top left no-repeat; background-size: cover; }
-.bannerBox .scrollingArrow { margin-left: -15px; display: block; font-size: 16px; box-shadow: 0 3px 3px rgba(0,0,0,.5); position: absolute; bottom: 0; left: 50%; width: 30px; height: 30px; border-radius: 50%; color: #fff; line-height: 30px; text-align: center; background-color: #f5a623; }
+.bannerBox .scrollingArrow { margin-left: -14px; display: block; font-size: 16px; box-shadow: 0 3px 3px rgba(0,0,0,.5); position: absolute; bottom: 0px; left: 50%; width: 30px; height: 30px; border-radius: 50%; color: #fff; line-height: 30px; text-align: center; animation: arrow-jump 2s infinite; background-color: #f5a623; }
 .bannerBox:before { position: absolute; bottom: 0; width: 100%; height: 15px; content: ''; background-color: #fff; }
 .bannerBox .info { margin: auto; max-width: 500px; width: 100%; padding-top: 18%; text-align: center; }
 .bannerBox .info h1 { line-height: normal; font-weight: 400; color: #fff; }
@@ -33,6 +33,27 @@ header .navbar-toggle { margin-top: 16px; }
 .bannerBox .info h1 span { font-weight: 700; }
 .bannerBox .btn { padding: 8px 20px; margin: 5px 3px; font-size: 16px; text-align: center; font-weight: 600; max-width: 230px; width: 100%; display: inline-block; color: #fff; border-radius: 3px; border: 1px solid #f5a623; background-color: #f5a623; }
 .bannerBox .btn:hover { color: #fff; border-color: #de9721; background-color: #de9721; }
+
+@keyframes arrow-jump {
+	0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
 
 /* css for sections */
 section { padding: 150px 50px; position: relative; }
@@ -179,7 +200,7 @@ footer span { padding-right: 10px; }
 	.globalLaunchBox { padding-bottom: 0; }
 	.apartmentTypeBox .spec-row { padding: 0; }
 	.amenitiesBox li { width: 13%; } 
-	.loanBlock { padding: 0; }
+	.globalLaunchBox .loanBlock { padding: 0; }
 	.globalLaunchBox .launchDetails tr th, .globalLaunchBox .launchDetails tr td { padding: 10px 20px!important; }  
 }
 

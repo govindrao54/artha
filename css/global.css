@@ -27,8 +27,8 @@ header .navbar-toggle { margin-top: 16px; }
 .bannerBox { height: 100%; position: relative; background: url(../images/bannerBg.jpg) top left no-repeat; background-size: cover; }
 .bannerBox .scrollingArrow { margin-left: -14px; display: block; font-size: 16px; box-shadow: 0 3px 3px rgba(0,0,0,.5); position: absolute; bottom: 0px; left: 50%; width: 30px; height: 30px; border-radius: 50%; color: #fff; line-height: 30px; text-align: center; animation: arrow-jump 2s infinite; background-color: #f5a623; }
 .bannerBox:before { position: absolute; bottom: 0; width: 100%; height: 15px; content: ''; background-color: #fff; }
-.bannerBox .info { margin: auto; max-width: 500px; width: 100%; padding-top: 18%; text-align: center; }
-.bannerBox .info h1 { line-height: normal; font-weight: 400; color: #fff; }
+.bannerBox .info { margin: auto; max-width: 500px; width: 100%; padding-top: 26%; text-align: center; }
+.bannerBox .info h1 { margin-bottom: 30px; line-height: normal; font-weight: 400; color: #fff; }
 .bannerBox .info h1 i { font-size: 32px; }
 .bannerBox .info h1 span { font-weight: 700; }
 .bannerBox .btn { padding: 8px 20px; margin: 5px 3px; font-size: 16px; text-align: center; font-weight: 600; max-width: 230px; width: 100%; display: inline-block; color: #fff; border-radius: 3px; border: 1px solid #f5a623; background-color: #f5a623; }
@@ -56,7 +56,7 @@ header .navbar-toggle { margin-top: 16px; }
 }
 
 /* css for sections */
-section { padding: 150px 50px; position: relative; }
+section { padding: 100px 50px; position: relative; }
 section h2 { margin-top: 0; margin-bottom: 30px; font-weight: 600; text-transform: uppercase; color: #f5a623; }
 section h4 { margin-bottom: 30px; font-weight: 600; color: #f5a623; }
 section p { font-size: 16px; }
@@ -179,7 +179,7 @@ section p { font-size: 16px; }
 /* css for image lightbox */
 .imgLightBox { position: fixed; top: 0; left: 0; opacity: 0; visibility: hidden; width: 100%; height: 100%; z-index: 10; transition: all .3s ease-in-out; background-color: rgba(0,0,0,.5); }
 .imgLightBox.open { opacity: 1; visibility: visible; }
-.imgLightBox .content { padding: 20px; margin: auto; margin-top: 15%; max-width: 700px; width: 100%; border-radius: 7px; position: relative; background-color: #fff; }
+.imgLightBox .content { padding: 20px; margin: auto; margin-top: 7%; max-width: 700px; width: 100%; border-radius: 7px; position: relative; background-color: #fff; }
 .imgLightBox .clse { border: 0 none; border-radius: 50%; font-size: 12px; font-weight: 800; height: 30px; position: absolute; right: -15px; text-transform: uppercase; top: -15px; width: 30px; border: 1px solid #ccc; background: #fff; }
 
 .bannerBox .btn-o, .apartmentTypeBox .btn-o { color: #f5a623; background-color: inherit; }

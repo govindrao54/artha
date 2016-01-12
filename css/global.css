@@ -206,7 +206,7 @@ footer span { padding-right: 10px; }
 }
 
 @media (max-width: 767px) {
-    body { padding-top: 75px; }
+    body { padding-top: 65px; }
 	header .navbar { background-color: #fff; }
 	header .navbar-nav { margin: 0; }
 	header .navbar-nav li { padding: 0; }

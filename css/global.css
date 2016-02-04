@@ -6,6 +6,7 @@ img  { max-width: 100%; height: auto; }
 ul { list-style: none; }
 iframe { width: 100%; display: block; }
 .errorMsg { margin-top: 5px; color: #a94442; font-size: 11px; }
+.valign { vertical-align: middle; }
 
 /* css for header */
 header { position: fixed; top: 0; left: 0; width: 100%; z-index: 10; }
@@ -59,7 +60,7 @@ header .navbar-toggle { margin-top: 16px; }
 section { padding: 100px 50px; position: relative; }
 section h2 { margin-top: 0; margin-bottom: 30px; font-weight: 600; text-transform: uppercase; color: #f5a623; }
 section h4 { margin-bottom: 30px; font-weight: 600; color: #f5a623; }
-section p { font-size: 16px; }
+section p { font-size: 18px; }
 
 /* css for book now */
 .bookNowBox .poweredBy { position: absolute; text-align: right; top: 90px; right: 0; font-family: 'Slabo 27px', arial, serif; }
@@ -88,9 +89,12 @@ section p { font-size: 16px; }
 /* css for loan block */
 .loanBlock { padding: 30px; text-align: center; background-color: #f0f0f0; }
 .loanBlock .col { color: #999; font-weight: 600; border-left: 1px solid #dcdcdc; }
+.loanBlock .col img { margin-right: 10px; }
 .loanBlock .col:first-child { border: none; }
 .loanBlock .col span { margin: 10px 0; display: block; font-weight: 700; font-size: 38px; color: #f5a623; }
 .loanBlock .col span small { font-size: 20px; }
+.loanBlock .payTxt span { padding: 20px 0; color: #666; }
+.loanBlock .colIn { display: inline-block; }
 
 /* css for apartment type */
 .apartmentTypeBox { padding-bottom: 0; }
@@ -104,7 +108,7 @@ section p { font-size: 16px; }
 
 /* css for amenities */
 .amenitiesBox ul { padding: 20px 0; border-bottom: 1px solid #dcdcdc; text-align: center; }
-.amenitiesBox li { padding: 0 20px; width: 14%; display: inline-block; vertical-align: top; }
+.amenitiesBox li { padding: 0 20px; width: 14%; display: inline-block; vertical-align: top; font-size: 16px; }
 .amenitiesBox li img { margin: auto; margin-bottom: 10px; display: block; }
 .amenitiesBox li { font-family: 'Slabo 27px', arial, serif; color: #999; }
 
@@ -132,9 +136,10 @@ section p { font-size: 16px; }
 
 /* css for why hoskote */
 .whyHoskoteBox ul { margin-left: 10px; margin-bottom: 30px; list-style: disc; }
-.whyHoskoteBox li { margin-bottom: 10px; font-size: 16px; line-height: 20px; font-family: 'Slabo 27px', arial, serif; }
+.whyHoskoteBox li { margin-bottom: 10px; font-size: 18px; line-height: 20px; font-family: 'Slabo 27px', arial, serif; }
 .whyHoskoteBox iframe { margin: auto; max-width: 600; width: 100%; height: 375px; }
 .whyHoskoteBox .video img { cursor: pointer; }
+.whyHoskoteBox .map { margin-bottom: 20px; }
 
 /* css for neighbourhood or map */
 .neighbourhoodBox { padding-top: 0; padding-bottom: 0; }
@@ -176,6 +181,10 @@ section p { font-size: 16px; }
 .registerBox .promise ul { margin: 0; margin-top: 20px; overflow: hidden; }
 .registerBox .promise li { float: left; width: 25%; color: #999; font-family: 'Slabo 27px', arial, serif; font-size: 13px; }
 .registerBox .promise li img { margin: auto; margin-bottom: 10px; display: block; }
+.registerBox .interested { margin-bottom: 20px; text-align: center; border-bottom: 1px solid #ccc }
+.registerBox .interested label { display: inline-block; }
+.registerBox .interested .form-control { padding: 2px; max-width: 90px; border: 1px solid #dcdcdc; display: inline-block; background-color: #dcdcdc; }
+.registerBox .interested select { margin-top: 10px; }
 
 /* css for image lightbox */
 .imgLightBox { position: fixed; top: 0; left: 0; opacity: 0; visibility: hidden; width: 100%; height: 100%; z-index: 10; transition: all .3s ease-in-out; background-color: rgba(0,0,0,.5); }
@@ -216,6 +225,7 @@ footer span { padding-right: 10px; }
 	.bannerBox .info { padding: 0 50px; padding-top: 30%; }
 	.conceptManageWrapBox .cols { transition: none; background-size: cover; }
 	.conceptManageWrapBox .cols:hover { background-size: cover; }
+	.loanBlock .payTxt span { padding-bottom: 0; margin: 0; }
 	section, .globalLaunchBox { padding: 30px 20px; }
 	section h2 { margin-bottom: 10px; }
 	/*.bookNowBox, .bookNowBox .text-right { text-align: center; }*/
@@ -245,7 +255,7 @@ footer span { padding-right: 10px; }
 	.bookNowBox .feature span { font-size: 12px; }
 	.bookNowBox .feature .fa-rupee { font-size: 16px; }
 	.conceptManageWrapBox .cols { padding: 20px; display: block; }
-	.amenitiesBox li { margin: 10px; padding: 0; width: 22%; word-wrap: break-word; } 
+	.amenitiesBox li { margin: 10px; padding: 0; width: 24%; }
 	.loanBlock .col span { font-size: 22px; }
 	.loanBlock .col { font-size: 12px; }
 	.globalLaunchBox .loanBlock .col:after { display: none; }

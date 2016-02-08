@@ -169,7 +169,6 @@ section p { font-size: 18px; }
 .masterPlanBox { background-color: #f0f0f0; }
 .masterPlanBox ul { margin-top: 20px; list-style: decimal; }
 .masterPlanBox li { padding-bottom: 5px; font-family: 'Slabo 27px', arial, serif; line-height: 20px; }
-.masterPlanBox .masterPlan-img { cursor: pointer; }
 
 /* css for global launch */
 .globalLaunchBox { padding: 0; padding-top: 150px; text-align: center; }

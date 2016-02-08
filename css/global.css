@@ -28,10 +28,12 @@ header .navbar-toggle { margin-top: 16px; }
 .bannerBox { height: 100%; position: relative; background: url(../images/bannerBg.jpg) top left no-repeat; background-size: cover; }
 .bannerBox .scrollingArrow { margin-left: -14px; display: block; font-size: 16px; box-shadow: 0 3px 3px rgba(0,0,0,.5); position: absolute; bottom: 0px; left: 50%; width: 30px; height: 30px; border-radius: 50%; color: #fff; line-height: 30px; text-align: center; animation: arrow-jump 2s infinite; background-color: #f5a623; }
 .bannerBox:before { position: absolute; bottom: 0; width: 100%; height: 15px; content: ''; background-color: #fff; }
-.bannerBox .info { margin: auto; max-width: 500px; width: 100%; padding-top: 26%; text-align: center; }
-.bannerBox .info h1 { margin-bottom: 30px; text-shadow: 0 3px 3px #000; line-height: normal; font-weight: 400; color: #fff; }
+.bannerBox .info { margin: auto; max-width: 500px; width: 100%; padding-top: 20%; text-align: center; }
+.bannerBox .info h1 { margin-bottom: 10px; text-shadow: 0 3px 3px #000; line-height: normal; font-weight: 400; color: #fff; }
 .bannerBox .info h1 i { font-size: 32px; }
 .bannerBox .info h1 span { font-weight: 700; }
+.bannerBox .info h4 { margin-top: 0; margin-bottom: 30px; color: #fff; text-shadow: 0 3px 3px #000; }
+.bannerBox .info h4 span { padding-top: 15px; border-top: 1px solid #fff; display: inline-block; }
 .bannerBox .btn { padding: 8px 20px; margin: 5px 3px; font-size: 16px; text-align: center; font-weight: 600; max-width: 230px; width: 100%; display: inline-block; color: #fff; border-radius: 3px; border: 1px solid #f5a623; background-color: #f5a623; }
 .bannerBox .btn:hover { color: #fff; border-color: #de9721; background-color: #de9721; }
 
@@ -71,6 +73,56 @@ section p { font-size: 18px; }
 .bookNowBox .feature span { margin: 10px 0; display: block; color: #999; font-size: 18px; font-weight: 600; }
 .bookNowBox .feature .fa-rupee { font-size: 20px; }
 
+/* 4d view css */
+.banner-4d { margin-top: 70px; text-align: center; }
+.banner-4d .banner { padding: 15px 520px 15px 180px; min-height: 170px; overflow: hidden; box-shadow: 0 0 30px rgba(0,0,0,.5); position: relative; background-color: #fff; }
+.banner-4d .fourD-logo { position: absolute; left: 0; top: 15px; width: 200px; }
+.banner-4d h3 { margin-top: 0; margin-bottom: 20px; line-height: normal; font-size: 28px; }
+.banner-4d h3 span { color: #f5a623; }
+.banner-4d .banner .btn { padding: 10px 26px; }
+.banner-4d .center { position: relative; z-index: 1; }
+
+/*********** moving bg effects Starts *************/
+@keyframes movingBg {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+ 100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@-moz-keyframes movingBg {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@-webkit-keyframes movingBg {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+ 50% {background-color:#b4cfe0;}
+ 100% {background-position: 500px 1000px, 400px 400px, 300px 300px; background-color:#6b92b9;}
+}
+
+@-ms-keyframes movingBg {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+ 100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+.movingBg {
+    width: 500px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: url('../images/movingBg.png'), url('../images/movingBg2.png'), url('../images/movingBg3.png');
+    
+    -webkit-animation: movingBg 20s linear infinite;
+    -moz-animation: movingBg 20s linear infinite;
+    -ms-animation: movingBg 20s linear infinite;
+    animation: movingBg 20s linear infinite;
+    z-index: 0;
+	opacity: .9;
+}
+
+.movingBg:after, .movingBg:before { content: ''; display: block; width: 100px; height: 90px; position: absolute; top: 0; left: -50px; transform: rotate(140deg); background-color: #fff; }
+.movingBg:before { top: auto; bottom: 0; }
+
 /* css for smart city */
 .smartCityBox { background: url(../images/bannerBg.jpg) top left no-repeat; background-size: cover; }
 .smartCityBox:before { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; content: ''; z-index: 0; background-color: rgba(0,0,0,.5); }
@@ -87,13 +139,13 @@ section p { font-size: 18px; }
 .conceptManageWrapBox .cols:hover { background-size: 230%; }
 
 /* css for loan block */
-.loanBlock { padding: 30px; text-align: center; background-color: #f0f0f0; }
-.loanBlock .col { color: #999; font-weight: 600; border-left: 1px solid #dcdcdc; }
-.loanBlock .col img { margin-right: 10px; }
+.loanBlock { padding: 20px 30px; text-align: center; background-color: #f0f0f0; }
+.loanBlock .col { color: #999; font-weight: 600; border-left: 1px solid #dcdcdc; font-size: 22px; }
+.loanBlock .col img { margin-right: 15px; }
 .loanBlock .col:first-child { border: none; }
-.loanBlock .col span { margin: 10px 0; display: block; font-weight: 700; font-size: 38px; color: #f5a623; }
+.loanBlock .col span { margin: 10px 0; display: block; font-weight: 700; font-size: 38px; color: #666; }
 .loanBlock .col span small { font-size: 20px; }
-.loanBlock .payTxt span { padding: 20px 0; color: #666; }
+.loanBlock .payTxt span { padding: 0 20px 0; color: #f5a623; }
 .loanBlock .colIn { display: inline-block; }
 
 /* css for apartment type */
@@ -108,14 +160,16 @@ section p { font-size: 18px; }
 
 /* css for amenities */
 .amenitiesBox ul { padding: 20px 0; border-bottom: 1px solid #dcdcdc; text-align: center; }
-.amenitiesBox li { padding: 0 20px; width: 14%; display: inline-block; vertical-align: top; font-size: 16px; }
+.amenitiesBox li { padding: 0 20px; width: 19%; display: inline-block; vertical-align: top; font-size: 16px; }
 .amenitiesBox li img { margin: auto; margin-bottom: 10px; display: block; }
 .amenitiesBox li { font-family: 'Slabo 27px', arial, serif; color: #999; }
+.amenitiesBox li.shuttle { width: 100%; }
 
 /* css for master plan */
 .masterPlanBox { background-color: #f0f0f0; }
 .masterPlanBox ul { margin-top: 20px; list-style: decimal; }
 .masterPlanBox li { padding-bottom: 5px; font-family: 'Slabo 27px', arial, serif; line-height: 20px; }
+.masterPlanBox .masterPlan-img { cursor: pointer; }
 
 /* css for global launch */
 .globalLaunchBox { padding: 0; padding-top: 150px; text-align: center; }
@@ -135,11 +189,25 @@ section p { font-size: 18px; }
 .globalLaunchBox .launchDetails tr.odd td { background-color: #f0f0f0; }
 
 /* css for why hoskote */
-.whyHoskoteBox ul { margin-left: 10px; margin-bottom: 30px; list-style: disc; }
-.whyHoskoteBox li { margin-bottom: 10px; font-size: 18px; line-height: 20px; font-family: 'Slabo 27px', arial, serif; }
 .whyHoskoteBox iframe { margin: auto; max-width: 600; width: 100%; height: 375px; }
 .whyHoskoteBox .video img { cursor: pointer; }
 .whyHoskoteBox .map { margin-bottom: 20px; }
+.whyHoskoteBox .icon_bx { width: 19%; margin: 0 2.5% 30px; display: inline-block; vertical-align: text-top; }
+.whyHoskoteBox .img-wrap { margin-bottom: 20px; }
+.whyHoskoteBox p { text-align: center; font-size: 19px; line-height: 28px; }
+.whyHoskoteBox .near-by { padding: 40px; padding-top: 0; margin-top: 30px; background-color: #F0F0F0; }
+.whyHoskoteBox .near-by ul { margin: 0; overflow: hidden; list-style: none; }
+.whyHoskoteBox .near-by li { padding: 7px 20px 0 35px; margin-top: 30px; font-size: 20px; min-height: 30px; width: 50%; float: left; position: relative; }
+.whyHoskoteBox .near-by li span { width: 25px; height: 33px; line-height: 33px; display: block; position: absolute; left: 0; top: 0; }
+.whyHoskoteBox .near-by li em { width: 25px; height: 30px; display: inline-block; vertical-align: middle; background: url(../images/nearby-sprite.png) no-repeat; }
+.whyHoskoteBox .near-by li.railway em { background-position: top center; }
+.whyHoskoteBox .near-by li.ofc em { height: 33px; background-position: left -30px; }
+.whyHoskoteBox .near-by li.taxi em { height: 23px; background-position: left -66px; }
+.whyHoskoteBox .near-by li.school em { height: 24px; background-position: left -89px; }
+.whyHoskoteBox .near-by li.metro em { height: 29px; background-position: left -115px; }
+.whyHoskoteBox .near-by li.school-1 em { height: 27px; background-position: left -146px; }
+.whyHoskoteBox .near-by li.airport em { height: 22px; background-position: left -177px; }
+.whyHoskoteBox .near-by li.college em { height: 20px; background-position: left -200px; }
 
 /* css for neighbourhood or map */
 .neighbourhoodBox { padding-top: 0; padding-bottom: 0; }
@@ -222,10 +290,10 @@ footer span { padding-right: 10px; }
 	header .navbar-default .navbar-nav > li > a { padding: 7px 0; }
 	header .navbar-default .navbar-nav > li > a { color: #666; }
 	header .navbar-default .navbar-nav > li > a:hover, header .navbar-default .navbar-nav > .active > a, header .navbar-default .navbar-nav > .active > a:focus { outline: none; color: #000; border-bottom-color: #000; background: none; }
-	.bannerBox .info { padding: 0 50px; padding-top: 30%; }
+	.bannerBox .info { padding: 0 50px; padding-top: 20%; }
 	.conceptManageWrapBox .cols { transition: none; background-size: cover; }
 	.conceptManageWrapBox .cols:hover { background-size: cover; }
-	.loanBlock .payTxt span { padding-bottom: 0; margin: 0; }
+	.loanBlock .payTxt span { padding-bottom: 0; margin-top: 0; }
 	section, .globalLaunchBox { padding: 30px 20px; }
 	section h2 { margin-bottom: 10px; }
 	/*.bookNowBox, .bookNowBox .text-right { text-align: center; }*/
@@ -243,6 +311,15 @@ footer span { padding-right: 10px; }
 	.globalLaunchBox .loanBlock { padding: 0; }
 	.globalLaunchBox .launchDetails tr th, .globalLaunchBox .launchDetails tr td { padding: 10px 20px!important; }
 	.globalLaunchBox .launchDetails .tableWrap { width: 1000px; }
+	.banner-4d { padding: 15px; margin-top: 0; }
+	.banner-4d .banner { background: none; box-shadow: inherit; }
+	.banner-4d .center { padding: 20px; }
+	.banner-4d .fourD-logo { display: none; }
+	.banner-4d h3 { font-size: 24px; }
+	.banner-4d h3 span { display: block; color: #fff; text-shadow: 0 1px 1px rgba(0, 0, 0, 1); font-weight: bold; }
+	.movingBg::after, .movingBg::before { display: none; }
+	.whyHoskoteBox .near-by { padding: 15px; padding-top: 0; margin: 0 -5px; margin-top: 20px; }
+	.whyHoskoteBox .near-by li { padding-right: 0; margin-top: 15px; font-size: 16px; width: 100%; float: none; }
 }
 
 @media (max-width: 480px) {
@@ -256,6 +333,7 @@ footer span { padding-right: 10px; }
 	.bookNowBox .feature .fa-rupee { font-size: 16px; }
 	.conceptManageWrapBox .cols { padding: 20px; display: block; }
 	.amenitiesBox li { margin: 10px; padding: 0; width: 24%; }
+	.amenitiesBox li.shuttle img { width: auto; }
 	.loanBlock .col span { font-size: 22px; }
 	.loanBlock .col { font-size: 12px; }
 	.globalLaunchBox .loanBlock .col:after { display: none; }
@@ -263,4 +341,5 @@ footer span { padding-right: 10px; }
 	.imgLightBox .content { max-width: 300px; }
 	.amenitiesBox li img { width: 40px; }
 	.registerBox .content { max-width: 290px; }
+	.whyHoskoteBox .icon_bx { margin: 0 8.5% 30px; width: 32%; }
 }
